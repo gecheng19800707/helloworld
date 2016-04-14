@@ -1,5 +1,5 @@
 class ntp{
-	include ntp::service,ntp::config,ntp::install	
+	include ntp::service,ntp::config,ntp::install,ntp::log	
 }
 
 class ntp::service{
@@ -13,7 +13,6 @@ class ntp::service{
 }
 
 class ntp::config{
-  include ntp::log
 	file{'/etc/ntp.conf':
 		ensure	  =>	present,
 		owner	    =>	root,
