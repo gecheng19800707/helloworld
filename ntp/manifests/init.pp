@@ -8,7 +8,8 @@ class ntp::service{
     enable      =>  true,
     hasrestart  =>  true,
     hasstatus   =>  true,
-    require    =>  Class['ntp::config'],
+    require     =>  Class['ntp::config'],
+    before      =>  Class['ntp::log'],
 	}
 }
 
@@ -20,7 +21,7 @@ class ntp::config{
 		mode	    =>	644,
 		source	  =>	"puppet:///modules/ntp/ntp.conf",
     require   =>	[Class['ntp::install'],Class['ntp::log']],
-    notify    =>  Class['ntp::service']
+    notify    =>  Class['ntp::service'],
 	}
 }
 
@@ -38,6 +39,6 @@ class ntp::log{
     mode      =>  644,
     content   =>  "",
     replace   =>  false,
-    notify    =>  Class['ntp::service']
+    notify    =>  Class['ntp::service'],
   }
 }
