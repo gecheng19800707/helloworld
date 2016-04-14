@@ -32,7 +32,7 @@ class ntp::install{
 
 class ntp::log{
   file{'/etc/log/ntps.log':
-    ensure    =>  present,
+    ensure    =>  file,
     purge     =>  true,
     owner     =>  root,
     group     =>  root,
