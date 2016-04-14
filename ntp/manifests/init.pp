@@ -31,11 +31,12 @@ class ntp::install{
 }
 
 class ntp::log{
-  file{'/etc/log/ntps.log':
+  
+  file{'/var/log/ntps.log':
     owner     =>  root,
     group     =>  root,
     mode      =>  644,
-    content   =>  "a",
+    content   =>  "",
     replace   =>  false
   }
 }
