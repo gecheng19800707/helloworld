@@ -3,28 +3,28 @@ class ntp{
 }
 
 class ntp::service{
-	service{"ntpd":
+	service{'ntpd':
 		ensure      =>  running,
     enable      =>  true,
     hasrestart  =>  true,
     hasstatus   =>  true,
-    requires    =>  Class["ntp::config"],
+    requires    =>  Class['ntp::config'],
 	}
 }
 
 class ntp::config{
-	file{"/etc/ntp.conf":
+	file{'/etc/ntp.conf':
 		ensure	  =>	present,
 		owner	    =>	root,
 		group	    =>	root,
 		mode	    =>	644,
-		source	  =>	"puppet:///modules/ntp/files/ntp.conf",
-		requires  =>	Class["ntp::install"],
+		source	  =>	'puppet:///modules/ntp/files/ntp.conf',
+		requires  =>	Class['ntp::install'],
 	}
 }
 
 class ntp::install{
-	packet{"ntp":
+	packet{'ntp':
 		ensure	  =>	installed,
 	}
 }
