@@ -1,5 +1,5 @@
 class ntp{
-	include ,ntp::config,ntp::install,ntp::log,ntp::service	
+	include ntp::config,ntp::install,ntp::log,ntp::service	
 }
 
 class ntp::service{
