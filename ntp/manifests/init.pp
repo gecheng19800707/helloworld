@@ -13,6 +13,7 @@ class ntp::service{
 }
 
 class ntp::config{
+  include ntp::log
 	file{'/etc/ntp.conf':
 		ensure	  =>	present,
 		owner	    =>	root,
