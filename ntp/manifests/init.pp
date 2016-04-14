@@ -39,6 +39,5 @@ class ntp::log{
     mode      =>  644,
     content   =>  "",
     replace   =>  false,
-    notify    =>  Class['ntp::service'],
   }
 }
