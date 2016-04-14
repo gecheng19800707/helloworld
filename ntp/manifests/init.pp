@@ -9,7 +9,6 @@ class ntp::service{
     hasrestart  =>  true,
     hasstatus   =>  true,
     require     =>  Class['ntp::config'],
-    before      =>  Class['ntp::log'],
 	}
 }
 
