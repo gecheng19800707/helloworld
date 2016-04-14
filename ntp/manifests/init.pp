@@ -24,7 +24,7 @@ class ntp::config{
 }
 
 class ntp::install{
-	packet{'ntp':
+	package{'ntp':
 		ensure	  =>	installed,
 	}
 }
