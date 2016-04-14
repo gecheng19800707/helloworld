@@ -8,7 +8,7 @@ class ntp::service{
     enable      =>  true,
     hasrestart  =>  true,
     hasstatus   =>  true,
-    requires    =>  Class['ntp::config'],
+    require    =>  Class['ntp::config'],
 	}
 }
 
@@ -19,7 +19,7 @@ class ntp::config{
 		group	    =>	root,
 		mode	    =>	644,
 		source	  =>	'puppet:///modules/ntp/files/ntp.conf',
-		requires  =>	Class['ntp::install'],
+		require  =>	Class['ntp::install'],
 	}
 }
 
