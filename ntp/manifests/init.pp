@@ -32,10 +32,12 @@ class ntp::install{
 
 class ntp::log{
   file{'/var/log/ntp.log':
+    ensure    =>  present,
     owner     =>  root,
     group     =>  root,
     mode      =>  644,
     content   =>  "",
     replace   =>  false,
+    notify    =>  Class['ntp::service']
   }
 }
