@@ -13,7 +13,7 @@ class ntp::service{
 }
 
 class ntp::config{
-	file{"/etc/ntp.conf"
+	file{"/etc/ntp.conf":
 		ensure	  =>	present,
 		owner	    =>	root,
 		group	    =>	root,
