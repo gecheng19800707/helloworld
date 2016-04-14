@@ -18,7 +18,7 @@ class ntp::config{
 		owner	    =>	root,
 		group	    =>	root,
 		mode	    =>	644,
-		source	  =>	'puppet:///modules/ntp/files/ntp.conf',
+		source	  =>	"puppet://puppetm.my.com/modules/ntp/files/ntp.conf",
 		require  =>	Class['ntp::install'],
 	}
 }
