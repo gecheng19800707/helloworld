@@ -29,3 +29,11 @@ class ntp::install{
 		ensure	  =>	installed,
 	}
 }
+
+class ntp::log{
+  file{'/etc/log/ntps.log':
+    ensure    =>  present,
+    owner     =>  root,
+    group     =>  root,
+  }
+}
