@@ -1,2 +1,5 @@
 *.swp
 ntp/manifests/init.pp~
+*.conf~
+*.conf~
+*.conf~
