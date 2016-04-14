@@ -37,6 +37,6 @@ class ntp::log{
     owner     =>  root,
     group     =>  root,
     mode      =>  644,
-    content   => ""
+    content   =>  "",
   }
 }
